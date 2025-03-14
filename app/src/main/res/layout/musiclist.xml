@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/MusicImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_margin="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/MusicName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MusicName"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/MusicImage"
+        app:layout_constraintTop_toBottomOf="@+id/MusicImage" />
+
+    <ImageButton
+        android:id="@+id/PlayBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/MusicName"
+        app:layout_constraintTop_toBottomOf="@+id/MusicName"
+        app:srcCompat="@drawable/baseline_play_circle_24" />
+
+    <ImageButton
+        android:id="@+id/DownloadBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/PlayBtn"
+        app:layout_constraintStart_toEndOf="@+id/PlayBtn"
+        app:layout_constraintTop_toTopOf="@+id/PlayBtn"
+        app:srcCompat="@drawable/baseline_cloud_download_24" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/DownloadBtn"
+        app:layout_constraintStart_toEndOf="@+id/PlayBtn"
+        app:layout_constraintTop_toBottomOf="@+id/DownloadBtn" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/MusicImage"
+        app:layout_constraintStart_toStartOf="@+id/PlayBtn"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+</androidx.constraintlayout.widget.ConstraintLayout>
