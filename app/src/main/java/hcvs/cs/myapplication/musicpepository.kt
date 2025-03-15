@@ -1,6 +1,7 @@
 package hcvs.cs.myapplication
 
 
+import android.util.Log
 import com.google.gson.Gson
 import okhttp3.*
 import java.io.IOException
@@ -13,12 +14,14 @@ object musicpepository {
         client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
                 response.body?.string().let { json ->
+                    Log.e("download", "下載成功: $json")
                     val musicResponse = Gson().fromJson(json, musicResponse::class.java)
                     callback(musicResponse.resultList)
                 }
             }
 
             override fun onFailure(call: Call, e: IOException) {
+                Log.e("download", "下載失敗: ${e.message}")
             }
         })
     }
